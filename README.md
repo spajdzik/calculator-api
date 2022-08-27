@@ -28,7 +28,7 @@ docker-compose run app bin/phpunit
 docker-compose down
 ```
 
-- Documentation to the calculator api:
+- Documentation for the calculator api:
 ```bash
 http://localhost:8000/api/doc
 ```
