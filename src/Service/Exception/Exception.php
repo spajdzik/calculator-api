@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Service;
+namespace App\Service\Exception;
 
 use Symfony\Component\HttpKernel\Exception\HttpException;
 
@@ -10,7 +10,7 @@ class Exception extends HttpException
 
     public function __construct(ExceptionData $exceptionData)
     {
-        parent::__construct($exceptionData->getStatusCode(), $exceptionData->getType());
+        parent::__construct($exceptionData->getStatusCode(), $exceptionData->getMessage());
 
         $this->exceptionData = $exceptionData;
     }

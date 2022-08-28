@@ -16,16 +16,16 @@ docker-compose build
 docker-compose up -d
 ```
 
-- To run tests
-
-```bash
-docker-compose run app bin/phpunit
-```
-
 - To shut down your Docker Compose environment and remove all of its containers, networks, and volumes, run:
 
 ```bash
 docker-compose down
+```
+
+- To run tests
+
+```bash
+docker-compose run app bin/phpunit
 ```
 
 - Documentation for the calculator api:

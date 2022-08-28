@@ -3,6 +3,8 @@
 namespace App\Controller;
 
 use App\Service\Calculator\Calculator;
+use App\Service\Exception\ExceptionData;
+use Nelmio\ApiDocBundle\Model\Model;
 use OpenApi\Attributes as OA;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -28,10 +30,16 @@ class CalculatorController extends AbstractController
             schema: new OA\Schema(type: 'number')
         )
     ]
-    #[OA\Response(
-        response: 200,
-        description: 'Result of the equation'
-    )]
+    #[
+        OA\Response(
+            response: 200,
+            description: 'Result of the equation'
+        ),
+        OA\Response(
+            response: 500,
+            description: 'Response in case of error'
+        )
+    ]
     public function add(float $a, float $b): JsonResponse
     {
         return new JsonResponse($this->calculator->add($a, $b));
@@ -52,10 +60,16 @@ class CalculatorController extends AbstractController
             schema: new OA\Schema(type: 'number')
         )
     ]
-    #[OA\Response(
-        response: 200,
-        description: 'Result of the equation'
-    )]
+    #[
+        OA\Response(
+            response: 200,
+            description: 'Result of the equation'
+        ),
+        OA\Response(
+            response: 500,
+            description: 'Response in case of error'
+        )
+    ]
     public function subtract(float $a, float $b): JsonResponse
     {
         return new JsonResponse($this->calculator->subtract($a, $b));
@@ -76,10 +90,16 @@ class CalculatorController extends AbstractController
             schema: new OA\Schema(type: 'number')
         )
     ]
-    #[OA\Response(
-        response: 200,
-        description: 'Result of the equation'
-    )]
+    #[
+        OA\Response(
+            response: 200,
+            description: 'Result of the equation'
+        ),
+        OA\Response(
+            response: 500,
+            description: 'Response in case of error'
+        )
+    ]
     public function multiply(float $a, float $b): JsonResponse
     {
         return new JsonResponse($this->calculator->multiply($a, $b));
@@ -100,10 +120,16 @@ class CalculatorController extends AbstractController
             schema: new OA\Schema(type: 'number')
         )
     ]
-    #[OA\Response(
-        response: 200,
-        description: 'Result of the equation'
-    )]
+    #[
+        OA\Response(
+            response: 200,
+            description: 'Result of the equation'
+        ),
+        OA\Response(
+            response: 500,
+            description: 'Response in case of error'
+        )
+    ]
     public function divide(float $a, float $b): JsonResponse
     {
         return new JsonResponse($this->calculator->divide($a, $b));

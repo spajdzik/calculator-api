@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Service;
+namespace App\Service\Exception;
 
 class ExceptionData
 {
 
     public function __construct(
         protected int $statusCode,
-        protected string $type
+        protected string $message
     )
     {
     }
@@ -17,16 +17,16 @@ class ExceptionData
         return $this->statusCode;
     }
 
-    public function getType(): string
+    public function getMessage(): string
     {
-        return $this->type;
+        return $this->message;
     }
 
     public function toArray(): array
     {
         return [
             'code' => $this->statusCode,
-            'message' => $this->type,
+            'message' => $this->message,
         ];
     }
 }
